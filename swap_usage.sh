@@ -1,7 +1,15 @@
 #!/bin/bash
 
 swap_usage() {
-    free | awk '/Swap:/ {if ($2 == 0) {print "0.00%"} else {printf "%.2f%%\n", $3/$2 * 100}}'
+    value=$(free 2>/dev/null | awk '/Swap:/ {
+        if ($2 == 0) {
+            print "0.00"
+        } else {
+            printf "%.2f", $3/$2 * 100
+        }
+    }')
+    [[ -z "$value" ]] && echo null || echo "$value"
 }
 
 swap_usage
+
