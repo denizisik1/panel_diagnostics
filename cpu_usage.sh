@@ -6,7 +6,3 @@ cpu_usage() {
 }
 
 cpu_usage
-
-# flsakdjflkasdjflksadj
-# aslkdfjaslkdjf
-# alskdjflaskdjflk
